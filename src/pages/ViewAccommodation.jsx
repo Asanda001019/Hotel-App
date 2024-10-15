@@ -4,6 +4,7 @@ function ViewAccommodation() {
   return (
     <div>
       <h1 className="text-2xl">view accommodations Page</h1>;
+      
     </div>
   )
 }
