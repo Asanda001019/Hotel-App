@@ -21,6 +21,8 @@ import AdminDashboard from './pages/AdminDashboard';
 import AddAccommodation from './pages/AddAccommodation';
 import ViewAndManageAccommodations from './pages/ViewAndManageAccommodations';
 import AdminProfile from './pages/AdminProfile';
+import app from './firebaseConfig';
+
 
 
 
