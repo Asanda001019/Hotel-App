@@ -1,30 +1,124 @@
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 
-const Profile = () => {
-  const navigate = useNavigate();
+const Profile= () => {
+  const [editMode, setEditMode] = useState(false);
+  const [profile, setProfile] = useState({
+    profilePic: 'https://via.placeholder.com/150', // Placeholder image
+    name: 'Jane',
+    surname: 'Doe',
+    email: 'janedoe@example.com',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      [name]: value,
+    }));
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setProfile((prevProfile) => ({
+        ...prevProfile,
+        profilePic: URL.createObjectURL(file),
+      }));
+    }
+  };
+
+  const handleEditToggle = () => setEditMode(!editMode);
+
+  const handleSave = () => {
+    // Save changes logic here
+    setEditMode(false);
+  };
 
   return (
-    <div style={{minHeight: "65vh"}} >
-    <div className="p-4">
-      <h1 className="text-2xl font-bold">Profile</h1>
-      <button
-        onClick={() => navigate('/profile/history')}
-        className="bg-blue-500 text-white px-4 py-2 mt-4 rounded hover:bg-blue-600"
-      >
-        View History
-      </button>
-      <button
-        onClick={() => navigate('/profile/favourites')}
-        className="bg-blue-500 text-white px-4 py-2 mt-4 ml-4 rounded hover:bg-blue-600"
-      >
-        View Favourites
-      </button>
-    </div>
-    </div>
+    <section className="flex flex-col items-center py-10 bg-gray-50 min-h-screen">
+      <div className="bg-white shadow-md rounded-lg p-6 w-11/12 max-w-xl">
+        <div className="flex flex-col items-center">
+          <div className="relative mb-4">
+            <img
+              src={profile.profilePic}
+              alt="Profile"
+              className="w-24 h-24 rounded-full object-cover"
+            />
+            {editMode && (
+              <input
+                type="file"
+                onChange={handleImageChange}
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                accept="image/*"
+              />
+            )}
+          </div>
+          <h2 className="text-2xl font-bold text-gray-900">
+            {profile.name} {profile.surname}
+          </h2>
+          <p className="text-gray-500">{profile.email}</p>
+        </div>
+
+        <div className="mt-6">
+          {editMode ? (
+            <>
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  name="name"
+                  value={profile.name}
+                  onChange={handleInputChange}
+                  placeholder="First Name"
+                  className="w-full px-4 py-2 text-gray-900 bg-gray-100 border rounded-lg focus:border-blue-500 focus:outline-none"
+                />
+                <input
+                  type="text"
+                  name="surname"
+                  value={profile.surname}
+                  onChange={handleInputChange}
+                  placeholder="Last Name"
+                  className="w-full px-4 py-2 text-gray-900 bg-gray-100 border rounded-lg focus:border-blue-500 focus:outline-none"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  value={profile.email}
+                  onChange={handleInputChange}
+                  placeholder="Email"
+                  className="w-full px-4 py-2 text-gray-900 bg-gray-100 border rounded-lg focus:border-blue-500 focus:outline-none"
+                />
+              </div>
+              <div className="mt-6 flex justify-end space-x-4">
+                <button
+                  onClick={handleSave}
+                  className="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+                >
+                  Save
+                </button>
+                <button
+                  onClick={handleEditToggle}
+                  className="px-4 py-2 text-gray-600 bg-gray-200 rounded-lg hover:bg-gray-300"
+                >
+                  Cancel
+                </button>
+              </div>
+            </>
+          ) : (
+            <button
+              onClick={handleEditToggle}
+              className="w-full px-4 py-2 mt-6 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+            >
+              Edit Profile
+            </button>
+          )}
+        </div>
+      </div>
+    </section>
   );
 };
 
 export default Profile;
+
 
 
 
