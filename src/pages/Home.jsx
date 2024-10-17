@@ -1,13 +1,17 @@
 import React from 'react';
+import backgroundImage from '../assets/image2.jpg'; // Replace with your actual image path
 
 const Home = () => {
     return (
-        <div className="relative bg-gradient-to-b from-green-50 to-green-100">
+        <div
+            className="relative bg-gradient-to-b from-green-50 to-green-100"
+            style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        >
             <header className="absolute inset-x-0 top-0 z-10 w-full">
                 <div className="px-4 mx-auto sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16 lg:h-20">
                         <div className="flex-shrink-0">
-                           
+                            {/* Logo or brand name can go here */}
                         </div>
 
                         <button
@@ -22,7 +26,6 @@ const Home = () => {
                             </svg>
                             Menu
                         </button>
-
                     </div>
                 </div>
             </header>
@@ -37,26 +40,14 @@ const Home = () => {
                                     <p className="mt-6 text-base text-black sm:text-xl">
                                         Our A.I helps you to predict your expenses based on your previous activity and shares how you should manage your money.
                                     </p>
-                                    <a
-                                        href="#"
-                                        className="inline-flex items-center px-6 py-5 text-base font-semibold text-black transition-all duration-200 bg-green-300 mt-9 hover:bg-green-400 focus:bg-green-400"
-                                    >
-                                        Get started for free
-                                    </a>
                                 </div>
-
-                                
                             </div>
                         </div>
                     </div>
 
                     <div className="relative w-full overflow-hidden lg:w-5/12 lg:order-1">
                         <div className="lg:absolute lg:bottom-0 lg:left-0">
-                            <img
-                                className="w-full"
-                                src="https://cdn.rareblocks.xyz/collection/celebration/images/hero/4/phone-mockup.png"
-                                alt="Phone Mockup"
-                            />
+                            
                         </div>
                     </div>
                 </div>

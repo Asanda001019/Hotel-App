@@ -124,7 +124,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link className="text-white px-4 py-2 hover:bg-blue-500" to="/accommodations">
+            <Link className="text-white px-4 py-2 hover:bg-blue-500" to="/accommodationList">
               Accommodations
             </Link>
           </li>

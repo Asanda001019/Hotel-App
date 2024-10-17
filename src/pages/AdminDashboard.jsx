@@ -1,17 +1,8 @@
-// import React from 'react'
-
-// function AdminDashboard() {
-//   return (
-//     <div>AdminDashboard</div>
-//   )
-// }
-
-// export default AdminDashboard
-
 import React, { useState, useMemo } from 'react';
-import { FaTachometerAlt, FaShoppingCart, FaChartBar } from 'react-icons/fa'; // Import icons from react-icons
+import { FaTachometerAlt, FaPlusCircle, FaListAlt } from 'react-icons/fa'; // Import icons from react-icons
 import 'tailwindcss/tailwind.css';
 
+// Updated navigation items
 const NAVIGATION = [
   {
     segment: 'dashboard',
@@ -19,21 +10,21 @@ const NAVIGATION = [
     icon: <FaTachometerAlt className="text-gray-500" />, // Icon with Tailwind styling
   },
   {
-    segment: 'orders',
-    title: 'Orders',
-    icon: <FaShoppingCart className="text-gray-500" />,
+    segment: 'add-accommodation',
+    title: 'Add Accommodation',
+    icon: <FaPlusCircle className="text-gray-500" />,
   },
   {
-    segment: 'reports',
-    title: 'Reports',
-    icon: <FaChartBar className="text-gray-500" />,
+    segment: 'manage-accommodation',
+    title: 'Manage Accommodation',
+    icon: <FaListAlt className="text-gray-500" />,
   },
 ];
 
 function DemoPageContent({ pathname }) {
   return (
     <div className="py-16 flex flex-col items-center text-center">
-      <p className="text-lg font-semibold text-gray-700">Dashboard content for {pathname}</p>
+      <p className="text-lg font-semibold text-gray-700">Content for {pathname}</p>
     </div>
   );
 }

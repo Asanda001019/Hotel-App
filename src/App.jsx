@@ -9,8 +9,8 @@ import Register from './pages/Register';
 import Profile from './pages/Profile';
 import History from './pages/History';
 import Favourites from './pages/Favourites';
-import Accommodations from './pages/Accommodations';
-import ViewAccommodation from './pages/ViewAccommodation';
+// import AccommodationCard from './pages/AccommodationCard';
+// import ViewAccommodation from './pages/ViewAccommodation';
 import Cart from './pages/Cart';
 import Payment from './pages/Payment';
 import RateUs from './pages/RateUs';
@@ -19,9 +19,11 @@ import NoPage from './pages/NoPage';
 import RegisterAdmin from './pages/RegisterAdmin';
 import AdminDashboard from './pages/AdminDashboard';
 import AddAccommodation from './pages/AddAccommodation';
-import ViewAndManageAccommodations from './pages/ViewAndManageAccommodations';
+// import ViewAndManageAccommodationCard from './pages/ViewAndManageAccommodationCard';
 import AdminProfile from './pages/AdminProfile';
 import app from './firebaseConfig';
+import AccommodationList from '../src/pages/AccommodationList';
+import AccommodationDetails from '../src/pages/AccommodationDetails';
 
 
 
@@ -40,18 +42,22 @@ function App() {
           <Route path='/registerAdmin' element={<RegisterAdmin/>}/>
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/history" element={<History />} />
-          <Route path="/profile/favourites" element={<Favourites />} />
-          <Route path="/accommodations" element={<Accommodations />} />
-          <Route path="/accommodations/view" element={<ViewAccommodation />} />
-          <Route path="/accommodations/cart" element={<Cart />} />
-          <Route path="/accommodations/payment" element={<Payment />} />
-          <Route path="/accommodations/rate-us" element={<RateUs />} />
+          <Route path="/favourites" element={<Favourites />} />
+          {/* <Route path="/AccommodationCard" element={<AccommodationCard />} />
+          <Route path="/accommodationCard/view" element={<AccommodationDetails />} /> */}
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/Accommodation/payment" element={<Payment />} />
+          <Route path="/Accommodation/rate-us" element={<RateUs />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
-          <Route path="/view-manage" element={<ViewAndManageAccommodations />} />
+          {/* <Route path="/view-manage" element={<ViewAndManageAccommodationCard />} /> */}
           <Route path='/add-new' element={<AddAccommodation/>}/>
           <Route path='admin-profile' element={<AdminProfile/>}/>
           <Route path='*' element={<NoPage/>}/>
+
+
+          <Route path="/accommodationList" element={<AccommodationList />} />
+          <Route path="/accommodation/:id" element={<AccommodationDetails />} />
         </Routes>
       </main>
       <Footer />

@@ -4,9 +4,9 @@ const Profile= () => {
   const [editMode, setEditMode] = useState(false);
   const [profile, setProfile] = useState({
     profilePic: 'https://via.placeholder.com/150', // Placeholder image
-    name: 'Jane',
-    surname: 'Doe',
-    email: 'janedoe@example.com',
+    name: 'Asanda',
+    surname: 'Madondo',
+    email: 'Portia949@gmail.com',
   });
 
   const handleInputChange = (e) => {
