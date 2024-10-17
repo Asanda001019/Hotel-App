@@ -1,118 +1,72 @@
+import React from "react";
+import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
 
-
-
-     import React, { useState } from "react";
 const SignInUser = () => {
-  const [darkMode, setDarkMode] = useState(false);
   return (
-    <div className="flex flex-col justify-center items-center w-full h-[100vh] bg-[#282D2D] px-5">
-      <div className=" flex flex-col items-end justify-start  overflow-hidden mb-2 xl:max-w-3xl w-full">
-        <div className="flex">
-          <h3 className="text-white">Dark Mode : &nbsp;</h3>
-          <label class="inline-flex relative items-center mr-5 cursor-pointer">
+    <div className="flex flex-col justify-center items-center w-full h-[100vh] bg-gray-100 px-5">
+      <div className="bg-white w-full max-w-md p-8 rounded-lg shadow-lg">
+        <h1 className="text-2xl font-bold text-center text-navy-600 mb-6">Create Your Account</h1>
+        
+        <form className="space-y-4">
+          {/* Name Input */}
+          <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2">
+            <FaUser className="text-gray-400 mr-2" />
             <input
-              type="checkbox"
-              className="sr-only peer"
-              checked={darkMode}
-              readOnly
+              type="text"
+              placeholder="First Name"
+              className="w-full outline-none text-gray-700 placeholder-gray-500"
             />
-            <div
-              onClick={() => {
-                setDarkMode(!darkMode);
-              }}
-              className="w-11 h-6 bg-gray-200 rounded-full peer  peer-focus:ring-green-300  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"
-            ></div>
-          </label>
-        </div>
-      </div>
-      <div
-        className={`xl:max-w-3xl ${
-          darkMode ? "bg-black" : "bg-white"
-        }  w-full p-5 sm:p-10 rounded-md`}
-      >
-        <h1
-          className={`text-center text-xl sm:text-3xl font-semibold ${
-            darkMode ? "text-white" : "text-black"
-          }`}
-        >
-          Register for a free account
-        </h1>
-        <div className="w-full mt-8">
-          <div className="mx-auto max-w-xs sm:max-w-md md:max-w-lg flex flex-col gap-4">
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                className={`w-full px-5 py-3 rounded-lg font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none  focus:border-2  focus:outline ${
-                  darkMode
-                    ? "bg-[#302E30] text-white focus:border-white"
-                    : "bg-gray-100 text-black focus:border-black"
-                }`}
-                type="text"
-                placeholder="Your first name"
-              />
-              <input
-                className={`w-full px-5 py-3 rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${
-                  darkMode
-                    ? "bg-[#302E30] text-white focus:border-white"
-                    : "bg-gray-100 text-black focus:border-black"
-                }`}
-                type="text"
-                placeholder="Your last name"
-              />
-            </div>
+          </div>
+
+          {/* Surname Input */}
+          <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2">
+            <FaUser className="text-gray-400 mr-2" />
             <input
-              className={`w-full px-5 py-3 rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${
-                darkMode
-                  ? "bg-[#302E30] text-white focus:border-white"
-                  : "bg-gray-100 text-black focus:border-black"
-              }`}
-              type="email"
-              placeholder="Enter your email"
+              type="text"
+              placeholder="Last Name"
+              className="w-full outline-none text-gray-700 placeholder-gray-500"
             />
+          </div>
+
+          {/* Username Input */}
+          <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2">
+            <FaEnvelope className="text-gray-400 mr-2" />
             <input
-              className={`w-full px-5 py-3 rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${
-                darkMode
-                  ? "bg-[#302E30] text-white focus:border-white"
-                  : "bg-gray-100 text-black focus:border-black"
-              }`}
-              type="tel"
-              placeholder="Enter your phone"
+              type="text"
+              placeholder="Username"
+              className="w-full outline-none text-gray-700 placeholder-gray-500"
             />
+          </div>
+
+          {/* Password Input */}
+          <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2">
+            <FaLock className="text-gray-400 mr-2" />
             <input
-              className={`w-full px-5 py-3 rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${
-                darkMode
-                  ? "bg-[#302E30] text-white focus:border-white"
-                  : "bg-gray-100 text-black focus:border-black"
-              }`}
               type="password"
               placeholder="Password"
+              className="w-full outline-none text-gray-700 placeholder-gray-500"
             />
-            <button className="mt-5 tracking-wide font-semibold bg-[#E9522C] text-gray-100 w-full py-4 rounded-lg hover:bg-[#E9522C]/90 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
-              <svg
-                className="w-6 h-6 -ml-2"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                <circle cx="8.5" cy="7" r="4" />
-                <path d="M20 8v6M23 11h-6" />
-              </svg>
-              <span className="ml-3">Sign In</span>
-            </button>
-            <p className="mt-6 text-xs text-gray-600 text-center">
-              Already have an account?{" "}
-              <a href="">
-                <span className="text-[#E9522C] font-semibold">Login</span>
-              </a>
-            </p>
           </div>
-        </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full bg-navy-600 text-black font-semibold py-3 rounded-lg hover:bg-navy-200 transition duration-300"
+          >
+            Register
+          </button>
+        </form>
+
+        {/* Login Link */}
+        <p className="mt-4 text-center text-sm text-gray-600">
+          Already have an account?{" "}
+          <a href="/login" className="text-navy-600 font-semibold hover:underline">
+            Log in here
+          </a>
+        </p>
       </div>
     </div>
   );
 };
 
-
-export default SignInUser
+export default SignInUser;
