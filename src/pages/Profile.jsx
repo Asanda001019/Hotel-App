@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
-const Profile= () => {
+const Profile = () => {
   const [editMode, setEditMode] = useState(false);
   const [profile, setProfile] = useState({
     profilePic: 'https://via.placeholder.com/150', // Placeholder image
@@ -8,6 +9,8 @@ const Profile= () => {
     surname: 'Madondo',
     email: 'Portia949@gmail.com',
   });
+
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -112,12 +115,29 @@ const Profile= () => {
             </button>
           )}
         </div>
+
+        {/* Favourites and History Buttons */}
+        <div className="mt-6 flex justify-around">
+          <button
+            onClick={() => navigate('/favourites')} // Navigate to Favourites page
+            className="px-4 py-2 text-white bg-green-600 rounded-lg hover:bg-green-700"
+          >
+            View Favourites
+          </button>
+          <button
+            onClick={() => navigate('/history')} // Navigate to History page
+            className="px-4 py-2 text-white bg-yellow-600 rounded-lg hover:bg-yellow-700"
+          >
+            View History
+          </button>
+        </div>
       </div>
     </section>
   );
 };
 
 export default Profile;
+
 
 
 

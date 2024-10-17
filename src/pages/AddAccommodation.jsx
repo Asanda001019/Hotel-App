@@ -2,7 +2,7 @@ import React from 'react'
 
 function AddAccommodation() {
   return (
-    <div>AddAccommodation</div>
+    <h1>Add new Accommodation</h1>
   )
 }
 

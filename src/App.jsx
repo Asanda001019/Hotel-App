@@ -41,7 +41,7 @@ function App() {
           <Route path="/registeruser" element={<Register />} />
           <Route path='/registerAdmin' element={<RegisterAdmin/>}/>
           <Route path="/profile" element={<Profile />} />
-          <Route path="/profile/history" element={<History />} />
+          <Route path="/history" element={<History />} />
           <Route path="/favourites" element={<Favourites />} />
           {/* <Route path="/AccommodationCard" element={<AccommodationCard />} />
           <Route path="/accommodationCard/view" element={<AccommodationDetails />} /> */}
@@ -51,7 +51,7 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           {/* <Route path="/view-manage" element={<ViewAndManageAccommodationCard />} /> */}
-          <Route path='/add-new' element={<AddAccommodation/>}/>
+          <Route path='/add-accommodation' element={<AddAccommodation/>}/>
           <Route path='admin-profile' element={<AdminProfile/>}/>
           <Route path='*' element={<NoPage/>}/>
 

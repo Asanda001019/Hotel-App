@@ -50,8 +50,10 @@ function AdminDashboard({ window }) {
           {NAVIGATION.map((item, index) => (
             <button
               key={index}
-              onClick={() => setPathname(`/${item.segment}`)}
-              className="flex items-center p-2 my-2 text-gray-600 hover:text-blue-500 hover:bg-gray-100 w-full rounded-lg"
+              onClick={() => setPathname(`/${item.segment}`)} // Update pathname based on segment
+              className={`flex items-center p-2 my-2 text-gray-600 hover:text-blue-500 hover:bg-gray-100 w-full rounded-lg ${
+                pathname === `/${item.segment}` ? 'bg-gray-200' : ''
+              }`}
             >
               {item.icon}
               <span className="ml-3 text-sm font-medium">{item.title}</span>
