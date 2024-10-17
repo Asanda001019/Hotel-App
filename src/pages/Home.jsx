@@ -36,9 +36,9 @@ const Home = () => {
                         <div className="h-full px-4 pt-24 pb-16 sm:px-6 lg:px-24 2xl:px-32 lg:pt-40 lg:pb-14">
                             <div className="flex flex-col justify-between flex-1 h-full">
                                 <div>
-                                    <h1 className="text-4xl font-bold text-black sm:text-6xl xl:text-7xl">Take control <br />on your daily expenses</h1>
+                                    <h1 className="text-4xl font-bold text-black sm:text-6xl xl:text-7xl">Experience Luxury <br /> Like Never Before</h1>
                                     <p className="mt-6 text-base text-black sm:text-xl">
-                                        Our A.I helps you to predict your expenses based on your previous activity and shares how you should manage your money.
+                                        Discover exceptional accommodations tailored to your needs. From modern amenities to breathtaking views, we ensure your stay is unforgettable.
                                     </p>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@ const Home = () => {
 
                     <div className="relative w-full overflow-hidden lg:w-5/12 lg:order-1">
                         <div className="lg:absolute lg:bottom-0 lg:left-0">
-                            
+                            {/* You can add any additional content or images here */}
                         </div>
                     </div>
                 </div>

@@ -19,11 +19,12 @@ import NoPage from './pages/NoPage';
 import RegisterAdmin from './pages/RegisterAdmin';
 import AdminDashboard from './pages/AdminDashboard';
 import AddAccommodation from './pages/AddAccommodation';
-// import ViewAndManageAccommodationCard from './pages/ViewAndManageAccommodationCard';
+
 import AdminProfile from './pages/AdminProfile';
 import app from './firebaseConfig';
 import AccommodationList from '../src/pages/AccommodationList';
 import AccommodationDetails from '../src/pages/AccommodationDetails';
+import ViewAndManageAccommodation from './pages/ViewAndManageAccommodations';
 
 
 
@@ -50,7 +51,7 @@ function App() {
           <Route path="/Accommodation/rate-us" element={<RateUs />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
-          {/* <Route path="/view-manage" element={<ViewAndManageAccommodationCard />} /> */}
+          <Route path="/view-manage" element={<ViewAndManageAccommodation/>} />
           <Route path='/add-accommodation' element={<AddAccommodation/>}/>
           <Route path='admin-profile' element={<AdminProfile/>}/>
           <Route path='*' element={<NoPage/>}/>
